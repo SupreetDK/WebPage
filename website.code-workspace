@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../TicTacToe"
+		},
+		{
+			"path": "../C++ New"
+		},
+		{
+			"path": "../java"
+		}
+	],
+	"settings": {
+		"java.debug.settings.onBuildFailureProceed": true,
+		"liveServer.settings.multiRootWorkspaceName": "TicTacToe"
+	}
+}

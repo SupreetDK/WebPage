@@ -1,0 +1,71 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  background-position: center;
+  text-align: center;
+}
+
+/* Container styling */
+/* .container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+} */
+
+/* Heading styling */
+h1 {
+  margin-bottom: 20px;
+  color: #0daada;
+}
+h2 {
+  margin-bottom: 20px;
+  color: black;
+}
+
+/* Country list styling */
+.country-list {
+  display: inline;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  
+}
+
+
+.country-list label {
+  font-size: 18px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+/* Continue button styling */
+.continue-button {
+  background-color: blue;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+ 
+}
+
+.continue-button:hover {
+  background-color: rgba(0, 0, 255, 0.795);
+}
+
+.continue-button a{
+  text-decoration: none;
+  color:white;
+}

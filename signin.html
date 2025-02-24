@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In with OTP</title>
+  <link rel="stylesheet" href="sign.css">
+</head>
+<body>
+  <!-- Modal for Phone Number Input -->
+  <div class="overlay" id="phoneOverlay">
+    <div id="phoneModal" class="modal">
+      <h2>Enter Your Phone Number</h2>
+      <form id="phoneForm">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91" required>
+        <button type="submit">Send OTP</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal for OTP Input (Initially Hidden) -->
+  <div class="overlay" id="otpOverlay" style="display: none;">
+    <div id="otpModal" class="modal">
+      <h2>Enter OTP</h2>
+      <form id="otpForm">
+        <label for="otp">OTP:</label>
+        <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+        <button type="submit">Verify OTP</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const phoneOverlay = document.getElementById("phoneOverlay");
+    const otpOverlay = document.getElementById("otpOverlay");
+    const phoneForm = document.getElementById("phoneForm");
+    const otpForm = document.getElementById("otpForm");
+    let generatedOtp = "";
+    
+    // Simulate sending OTP
+    phoneForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const phone = document.getElementById("phone").value;
+      if (phone.trim() === "") {
+        alert("Please enter a valid phone number.");
+        return;
+      }
+      
+      // Generate a random 6-digit OTP (simulating a real process)
+      generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+      alert("OTP sent to " + phone + "\nOTP: " + generatedOtp); // In production, send via SMS API
+      
+      phoneOverlay.style.display = "none";
+      otpOverlay.style.display = "flex";
+    });
+    
+    // OTP verification
+    otpForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const otp = document.getElementById("otp").value;
+      
+      if (otp.trim() === "" || otp !== generatedOtp) {
+        alert("Invalid OTP. Please try again.");
+        return;
+      }
+      
+      alert("OTP verified successfully!");
+      otpOverlay.style.display = "none";
+    });
+  </script>
+</body>
+</html>
